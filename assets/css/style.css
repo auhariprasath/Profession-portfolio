@@ -1,29 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
 
 :root {
-    --color-body: black;
-    --color-heading: black;
-    --color-base: rgba(0, 0, 128, 1) ;
-    --color-base2: white;
-    --color-brand: rgba(0, 0, 128, 1);
-    --color-brand2: rgba(0, 0, 128, 1);
+    --blue: rgba(0, 0, 128, 1);
+    --white: #ffffff;
+    --black: #000000;
+    --color-body: var(--black);
+    --color-heading: var(--black);
+    --color-base: var(--blue);
+    --color-base2: var(--white);
+    --color-brand: var(--blue);
+    --color-brand2: var(--blue);
     --sidbar-width: 240px;
-    --font-base: "san-serif";
+    --font-base: "Bai Jamjuree", sans-serif;
 }
 
 body {
-    background-color: var(--color-base2);
-    color: var(--color-body);
+    background-color: var(--white);
+    color: var(--black);
     font-family: var(--font-base), sans-serif;
     padding: 20px;
+}
+
+body.dark-section {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+body.dark-section h1,
+body.dark-section h2,
+body.dark-section h3,
+body.dark-section h4,
+body.dark-section h5,
+body.dark-section h6 {
+    color: var(--white);
 }
 
 h1,h2,h3,h4,h5,h6 {
     color: var(--color-heading);
     font-weight: 700;
 }
+
 .auto-type{
-    color: var(--color-brand);
+    color: var(--blue);
+}
+
+.text-brand-1, .text-brand-2 {
+    color: var(--blue);
 }
 
 a {
@@ -69,7 +91,7 @@ img {
 
 
 .bg-base {
-    background-color: var(--color-base);
+    background-color: #000080;
 }
 
 .full-height {
@@ -80,7 +102,6 @@ img {
     justify-content: center;
     padding-top: 80px;
     padding-bottom: 80px;
-    border-bottom: 2px solid rgba(255,255,255, 0.1);
 }
 
 .shadow-effect {
@@ -88,7 +109,7 @@ img {
 }
 
 .shadow-effect:hover {
-    box-shadow: -6px 6px 0 0 var(--color-brand);
+    box-shadow: -6px 6px 0 0 #000080;
 }
 
 .iconbox {
@@ -115,14 +136,14 @@ img {
     margin-top: 20px;
     margin-left: 200px;
     width: 220px;
-    background-color: rgba(0, 0, 128, 1);
+    background-color: #000080;
     color: white;
 
 }
 #exlpore-with-me:hover{
-    background-color: white;
-    color: rgba(0, 0, 128, 1);
-    border-width: 2px;
+    background-color: #fff;
+    color: #000080;
+    border: 2px solid #000080;
 }
 .social-icons-1 {
     margin-left: 200px;
@@ -136,15 +157,16 @@ img {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-base);
+    background-color: #000080;
     color: white;
     border-radius: 100px;
     font-size: 30px;
     
 }
 .social-icons-1 a:hover{
-    color: var(--color-base);
-    background-color: white;
+    background-color: #fff;
+    color: #000080;
+    border: 2px solid #000080;
 }
 
 
@@ -208,10 +230,30 @@ img {
     width: 100%;
     margin: 0 auto;
     max-width: 95%;
+    background-color: #fff;
+    border: 2px solid #000080;
+    border-radius: 10px;
+}
+
+.custom-box h5, .custom-box h6 {
+    color: #000;
+}
+
+.custom-box h5 {
+    color: #000080;
 }
 
 .inside-box1, .inside-box12 {
     color: #fff;
+}
+
+.inside-box1 {
+    color: #fff;
+    font-weight: 600;
+}
+
+.inside-box12 {
+    color: #ccc;
 }
 
 .view-intern-certificate {
@@ -238,10 +280,9 @@ img {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 8px 10px rgba(0,0,0,0.1);
+    padding: 15px 10px;
+    border: 1px solid #000080;
+    border-radius: 8px;
 }
 .skill h5 {
     display: flex;
@@ -249,16 +290,18 @@ img {
     font-size: 18px;
     margin: 0;
     flex: 1;
+    color: #000;
 }
 .skill h5 i {
     font-size: 24px;
     margin-right: 10px;
+    color: #000080;
 }
 .progress-wrapper {
     flex: 2;
     margin-left: 20px;
     height: 30px; 
-    background-color: #ddd;
+    background-color: #e0e0e0;
     border-radius: 5px;
     overflow: hidden;
     position: relative;
@@ -269,7 +312,7 @@ img {
     line-height: 30px;
     text-align: center;
     color: white;
-    background-color: var(--color-brand);
+    background-color: #000080;
     position: absolute; 
     left: 0;
     display: flex;
@@ -284,11 +327,15 @@ img {
 /*Projects*/
 
 .custom-card-container .card-custom {
-    background-color: var(--color-brand);
+    background-color: #fff;
     overflow: hidden;
     border-radius: 16px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border: 2px solid #000080;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .custom-card-container .card-custom-image img {
@@ -297,43 +344,47 @@ img {
     margin: 0 auto;
     display: block;
     transition: transform 0.3s ease-in-out;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid #000080;
 }
 
 .custom-card-container .card-custom-content {
     padding: 1rem;
     text-align: center;
-    background-color: var(--color-brand);
-    color: #f0f4f8;
+    background-color: #fff;
+    color: #000;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .custom-card-container .card-custom-content h5 {
     font-size: 1.25rem;
     font-weight: 600;
     margin: 1rem 0;
-    color: #ffffff;
+    color: #000080;
 }
 
 .custom-card-container .link-custom {
     display: inline-block;
     text-decoration: none;
-    color: #f0f4f8;
+    color: #000080;
     font-weight: 500;
-    border: 2px solid #f0f4f8;
+    border: 2px solid #000080;
     padding: 0.5rem 1rem;
     border-radius: 25px;
     transition: all 0.3s ease-in-out;
 }
 
 .custom-card-container .link-custom:hover {
-    background-color: #f0f4f8;
-    color: #1e3a5f;
+    background-color: #000080;
+    color: #fff;
 }
 
 
 /* NAVBAR */
 .navbar {
-    background-color: var(--color-base);
+    background-color: #000080;
 }
 
 .navbar .nav-link {
@@ -344,6 +395,7 @@ img {
 
 .navbar .nav-link:hover {
     text-decoration: underline;
+    color: #ccc;
 }
 
 
@@ -351,13 +403,11 @@ img {
     .navbar {
         min-height: 100vh;
         width: var(--sidbar-width);
-        background: linear-gradient(rgba(255, 183, 177, 1) rgba(255, 215, 0, 1)), url(../images/sidebar-img.jpg);
-        background-size: cover;
-        background-position: center;
+        background-color: #000080;
     }
 
     .navbar-brand img {
-        border: 8px solid var(--color-brand);
+        border: 8px solid #000080;
     }
 
     /* CONTENT WRAPPER */
@@ -421,13 +471,13 @@ img {
 /* CONTACT */
 
 #contact {
-    background-color: white;
-    color: var(--color-brand);
+    background-color: #fff;
+    color: #000;
     padding: 50px 0;
 }
 
-#contact h2.text-brand {
-    color: var(--color-brand);
+#contact h2 {
+    color: #000080;
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 10px;
@@ -436,24 +486,24 @@ img {
 #contact h1 {
     font-size: 1.75rem;
     font-weight: 500;
-    color: var(--color-brand);
+    color: #000;
     margin-bottom: 30px;
 }
 
 #contact .form-control {
-    background-color: var(--color-brand);
-    border: 1px solid var(--color-brand);
-    color: #f0f4f8;
+    background-color: #fff;
+    border: 2px solid #000080;
+    color: #000;
     padding: 15px;
 }
 
 #contact .form-control::placeholder {
-    color: #b0b8c1;
+    color: #666;
 }
 
 #contact .btn.btn-brand {
-    background-color: var(--color-brand);
-    color: var(--color-base2);
+    background-color: #000080;
+    color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 25px;
@@ -462,8 +512,9 @@ img {
 }
 
 #contact .btn.btn-brand:hover {
-    background-color: var(--color-base2);
-    color: var(--color-brand);
+    background-color: #fff;
+    color: #000080;
+    border: 2px solid #000080;
 }
 
 
